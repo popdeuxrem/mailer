@@ -242,7 +242,11 @@ class LinkTracker
 
     private function storeLinkMapping(string $linkId, string $originalUrl, string $trackingToken): void
     {
-        // In a real implementation, this would be stored in database
+        // For now, store in session - in production, use database
+        if (!isset($_SESSION['link_mappings'])) {
+            $_SESSION['link_mappings'] = [];
+        }
+        
         $_SESSION['link_mappings'][$linkId] = [
             'original_url' => $originalUrl,
             'tracking_token' => $trackingToken,
