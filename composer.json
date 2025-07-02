@@ -1,0 +1,37 @@
+{
+    "name": "emailmarketing/platform",
+    "description": "Advanced Email Marketing Platform with Dashboard and SMS Gateway",
+    "type": "project",
+    "require": {
+        "php": "^8.0",
+        "phpmailer/phpmailer": "^6.8",
+        "twig/twig": "^3.0",
+        "vlucas/phpdotenv": "^5.5",
+        "monolog/monolog": "^3.0",
+        "ramsey/uuid": "^4.7",
+        "symfony/console": "^6.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "league/csv": "^9.8",
+        "firebase/php-jwt": "^6.5",
+        "respect/validation": "^2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "EmailPlatform\\": "src/",
+            "EmailPlatform\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse src tests --level=8",
+        "install-platform": "php installer/install.php"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
