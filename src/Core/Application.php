@@ -23,6 +23,7 @@ use Exception;
  */
 class Application
 {
+    private string $basePath;
     private Container $container;
     private Router $router;
     private Logger $logger;
